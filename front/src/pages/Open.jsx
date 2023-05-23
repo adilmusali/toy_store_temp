@@ -4,7 +4,7 @@ const Open = () => {
   return (
     <section>
       <div
-        className='bg-center bg-no-repeat bg-cover h-[580px] flex justify-center items-center
+        className='bg-center bg-no-repeat bg-cover h-[600px] flex justify-center items-center
     bg-[url("https://assets.website-files.com/5badda2935e11303a89a461e/5baddd4835e113c6299a48f5_li-tzuni-507346-unsplash.jpg")]'
       >
         <div className="flex flex-col gap-3 px-[60px] py-[50px] bg-white text-center max-w-[550px] rounded-[20px]">

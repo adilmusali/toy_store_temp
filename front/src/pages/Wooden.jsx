@@ -19,7 +19,7 @@ const Wooden = () => {
 
   useEffect(() => {
     getData();
-  });
+  }, []);
   return (
     <section className="bg-[#f8f8f8]">
       <div className="container">

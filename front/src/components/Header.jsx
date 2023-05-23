@@ -3,9 +3,9 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Header = () => {
   return (
-    <header>
+    <header className="fixed w-full top-0 bg-white z-50">
       <div className="container">
-          <div className="flex justify-between py-[30px] items-center">
+          <div className="flex justify-between py-[20px] items-center">
             <div className="flex gap-[50px] items-center">
               <div>
                 <h1 className="text-[25px]">ToyStore</h1>

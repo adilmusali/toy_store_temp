@@ -40,6 +40,12 @@ app.get("/toys", async (req, res) => {
   res.send(toy);
 });
 
+app.get("/toys/:id", async (req,res) => {
+  const findId = req.params.id;
+  const toy = await Toy.findById(findId);
+  res.send(toy);
+})
+
 app.post("/toys", async (req, res) => {
   const uploadData = req.body;
   const toy = new Toy(uploadData);
