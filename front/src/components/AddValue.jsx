@@ -15,33 +15,39 @@ const AddValue = () => {
     resolver: yupResolver(schema),
   });
 
-  const postData = async() => {
-    const values = getValues()
-    await axios.post("http://localhost:8080/toys",{
-        image: values.image,
-        name: values.name,
-        price: values.price
-    })
-  }
+  const postData = async () => {
+    const values = getValues();
+    await axios.post("http://localhost:8080/toys", {
+      image: values.image,
+      name: values.name,
+      price: values.price,
+    });
+  };
 
   return (
     <>
-      <form onSubmit={handleSubmit(postData)}>
-        <FormControl>
-          <FormLabel>Image</FormLabel>
-          <Input type="text" {...register('image')}/>
-          {errors.image?.message && <p className="text-red-500">{errors.image?.message}</p>}
-          <FormLabel>Name</FormLabel>
-          <Input type="text" {...register('name')}/>
-          {errors.name?.message && <p className="text-red-500">{errors.name?.message}</p>}
-          <FormLabel>Price</FormLabel>
-          <Input type="number" {...register('price')}/>
-          {errors.price?.message && <p className="text-red-500">{errors.price?.message}</p>}
-          <Button colorScheme="teal" size="lg" type="submit">
-            Submit
-          </Button>
-        </FormControl>
-      </form>
+        <form onSubmit={handleSubmit(postData)} className="max-w-[500px] mx-auto text-center mt-[100px] border rounded-[20px] p-5 border-black">
+          <FormControl className="flex flex-col gap-[10px]">
+            <FormLabel>Image</FormLabel>
+            <Input type="text" {...register("image")} />
+            {errors.image?.message && (
+              <p className="text-red-500">{errors.image?.message}</p>
+            )}
+            <FormLabel>Name</FormLabel>
+            <Input type="text" {...register("name")} />
+            {errors.name?.message && (
+              <p className="text-red-500">{errors.name?.message}</p>
+            )}
+            <FormLabel>Price</FormLabel>
+            <Input type="number" {...register("price")} />
+            {errors.price?.message && (
+              <p className="text-red-500">{errors.price?.message}</p>
+            )}
+            <Button colorScheme="teal" size="lg" type="submit">
+              Submit
+            </Button>
+          </FormControl>
+        </form>
     </>
   );
 };
